@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+
+@plugin 'daisyui' {
+  themes: false;
+}
+
+
+@plugin 'daisyui/theme' {
+  name: 'booknest';
+  default: true;
+  prefersdark: true;
+  color-scheme: dark;
+
+  --color-base-100: #0d1110;
+  --color-base-200: #131917;
+  --color-base-300: #1c2421;
+  --color-base-content: #e9e5da;
+  --color-primary: #e0a84a;
+  --color-primary-content: #1b1307;
+  --color-secondary: #6fae98;
+  --color-secondary-content: #08130f;
+  --color-accent: #cf7a5f;
+  --color-accent-content: #1d0c06;
+  --color-neutral: #1f2825;
+  --color-neutral-content: #d9d4c7;
+  --color-info: #6aa7d6;
+  --color-info-content: #06121c;
+  --color-success: #6fae98;
+  --color-success-content: #08130f;
+  --color-warning: #e0a84a;
+  --color-warning-content: #1b1307;
+  --color-error: #e06c63;
+  --color-error-content: #1f0806;
+
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.85rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@theme {
+  --font-sans: 'Inter', 'Noto Sans Thai', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Cormorant Garamond', 'Noto Sans Thai', ui-serif, Georgia, serif;
+}
+
+:root {
+  --status-want: var(--color-primary);
+  --status-reading: var(--color-secondary);
+  --status-read: var(--color-accent);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-base-100 text-base-content font-sans antialiased;
+  background-image:
+    radial-gradient(1200px 500px at 85% -10%, color-mix(in oklab, var(--color-primary) 7%, transparent), transparent 70%),
+    radial-gradient(900px 400px at -10% 10%, color-mix(in oklab, var(--color-secondary) 5%, transparent), transparent 70%);
+  background-attachment: fixed;
+}
+
+.eyebrow {
+  @apply text-[11px] font-semibold tracking-[0.18em] uppercase text-primary;
+}
+
+.panel {
+  @apply rounded-box border border-base-300 bg-base-200/70 backdrop-blur-sm;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
